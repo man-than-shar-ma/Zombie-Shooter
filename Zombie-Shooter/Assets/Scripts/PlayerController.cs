@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
         velocity = _velocity;
     }
 
+    public void lookAt(Vector3 lookPoint){
+        Vector3 newPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
+        transform.LookAt(newPoint);
+    }
+
     public void FixedUpdate() {
         myRigidbody.MovePosition(myRigidbody.position + velocity * Time.fixedDeltaTime);
     }
